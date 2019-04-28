@@ -7,7 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 
 Shoulda::Matchers.configure do |config|
-  config.interate do |with|
+  config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
