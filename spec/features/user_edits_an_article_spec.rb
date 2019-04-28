@@ -8,12 +8,13 @@ describe "user edits an article" do
 
       visit article_path(article)
       click_link "Edit"
-      
-      fill_in "article[title]", with: "Different Title!"
-      click_on "Submit"
 
-      expect(current_path).to eq(articles_path)
+      fill_in "article[title]", with: "Different Title!"
+      fill_in "article[body]", with: "Different Body!"
+      click_on "Update Article"
+
       expect(page).to have_content("Different Title!")
+      expect(page).to have_content("Different Body!")
       end
     end
   end
